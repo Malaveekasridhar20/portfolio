@@ -29,7 +29,7 @@ const Projects = () => {
       tags: ["Flutter", "SQLite", "Billing"],
       isClient: true,
       image: "/screenshots/rythym-billing.png",
-      demoVideo: "/videos/rythym-demo.mp4",
+      demoVideo: "#", // Demo available on request
     },
     {
       title: "Greedam Ram Finance Chit System",
@@ -37,7 +37,7 @@ const Projects = () => {
       tags: ["React", "Tailwind", "PHP", "MySQL"],
       isClient: true,
       image: "/screenshots/greedam-finance.png",
-      demoVideo: "/videos/greedam-demo.mp4",
+      demoVideo: "#", // Demo available on request
     },
     {
       title: "Photo Studio Billing System (Tri Stone Industries)",
@@ -45,7 +45,7 @@ const Projects = () => {
       tags: ["Flutter", "SQLite", "GST"],
       isClient: true,
       image: "/screenshots/photo-studio-billing.png",
-      demoVideo: "/videos/photo-studio-demo.mp4",
+      demoVideo: "#", // Demo available on request
     },
     {
       title: "Rotary Club of Trichy Diamond City Website",
@@ -203,6 +203,17 @@ const Projects = () => {
                             <Play className="h-4 w-4 mr-2" />
                             Demo Video
                           </a>
+                        </Button>
+                      )}
+                      {(!project.demoVideo || project.demoVideo === "#") && !project.isWebsite && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="border-primary/20 hover:bg-primary/10"
+                          onClick={() => window.open('mailto:malaveekasridhar20072004@gmail.com?subject=Demo Request for ' + project.title, '_blank')}
+                        >
+                          <Play className="h-4 w-4 mr-2" />
+                          Request Demo
                         </Button>
                       )}
                       {project.link && project.link !== "#" && (
