@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light mode - Clean, airy, professional */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 60% 88%;
+    --secondary-foreground: 220 20% 15%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 15% 50%;
+
+    --accent: 197 92% 83%;
+    --accent-foreground: 220 20% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for portfolio */
+    --cyber-blue: 195 100% 50%;
+    --cyber-purple: 270 95% 60%;
+    --lavender: 270 60% 88%;
+    --sky-blue: 197 92% 83%;
+    
+    --gradient-cyber: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(270 95% 60%) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(197 92% 83% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(270 60% 88% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(195 100% 50% / 0.1) 0px, transparent 50%);
+    
+    --glow-cyber: 0 0 40px hsl(195 100% 50% / 0.5);
+    --glow-purple: 0 0 40px hsl(270 95% 60% / 0.5);
+    
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Cyberpunk, futuristic, immersive */
+    --background: 230 35% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 230 30% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 230 30% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 25% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 230 25% 15%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 270 95% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 25% 20%;
+    --input: 230 25% 20%;
+    --ring: 195 100% 50%;
+    
+    /* Custom tokens for dark mode */
+    --cyber-blue: 195 100% 50%;
+    --cyber-purple: 270 95% 60%;
+    --navy-deep: 230 35% 7%;
+    
+    --gradient-cyber: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(270 95% 60%) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(195 100% 50% / 0.15) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(270 95% 60% / 0.15) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(195 100% 50% / 0.1) 0px, transparent 50%);
+    
+    --glow-cyber: 0 0 60px hsl(195 100% 50% / 0.6);
+    --glow-purple: 0 0 60px hsl(270 95% 60% / 0.6);
+    
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .pastel-mode {
+    /* Pastel mode - Soft lavender gradient background with high contrast text */
+    --background: 250 100% 95%;
+    --foreground: 240 50% 15%;
+
+    --card: 250 100% 97%;
+    --card-foreground: 240 50% 15%;
+
+    --popover: 250 100% 97%;
+    --popover-foreground: 240 50% 15%;
+
+    --primary: 240 80% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 60% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 250 50% 92%;
+    --muted-foreground: 240 40% 35%;
+
+    --accent: 320 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 30% 80%;
+    --input: 250 30% 85%;
+    --ring: 240 80% 40%;
+
+    /* Custom gradient for pastel mode - matching your image */
+    --gradient-cyber: linear-gradient(135deg, hsl(250 100% 95%) 0%, hsl(280 60% 92%) 50%, hsl(320 40% 95%) 100%);
+    --gradient-mesh: linear-gradient(135deg, hsl(250 100% 95%) 0%, hsl(280 60% 92%) 30%, hsl(320 40% 95%) 70%, hsl(250 100% 95%) 100%);
+    
+    --glow-cyber: 0 0 30px hsl(210 100% 70% / 0.4), 0 0 60px hsl(210 100% 70% / 0.2);
+    --glow-purple: 0 0 30px hsl(240 60% 88% / 0.5), 0 0 60px hsl(240 60% 88% / 0.3);
+    --glow-pink: 0 0 30px hsl(330 85% 75% / 0.4), 0 0 60px hsl(330 85% 75% / 0.2);
+    
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  }
+
+  .pastel-mode body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background: linear-gradient(135deg, #f0f0ff 0%, #e6e6ff 30%, #f5f0ff 70%, #f0f0ff 100%);
+    min-height: 100vh;
+  }
+
+  .pastel-mode main {
+    background: linear-gradient(135deg, #f0f0ff 0%, #e6e6ff 30%, #f5f0ff 70%, #f0f0ff 100%);
+  }
+
+  /* Enhanced text visibility in pastel mode */
+  .pastel-mode h1,
+  .pastel-mode h2,
+  .pastel-mode h3,
+  .pastel-mode h4,
+  .pastel-mode h5,
+  .pastel-mode h6 {
+    color: hsl(240 50% 15%) !important;
+    font-weight: 700;
+  }
+
+  .pastel-mode p,
+  .pastel-mode span,
+  .pastel-mode div {
+    color: hsl(240 40% 25%) !important;
+  }
+
+  .pastel-mode .text-muted-foreground {
+    color: hsl(240 30% 40%) !important;
+  }
+
+  .pastel-mode .text-primary {
+    color: hsl(240 80% 40%) !important;
+  }
+
+  .pastel-mode .text-gradient {
+    background: linear-gradient(135deg, hsl(240 80% 40%) 0%, hsl(320 70% 50%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .pastel-mode .glass-card {
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .gradient-cyber {
+    background: var(--gradient-cyber);
+  }
+  
+  .gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+  
+  .glow-cyber {
+    box-shadow: var(--glow-cyber);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+
+  .glow-pink {
+    box-shadow: var(--glow-pink);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Particle background for pastel mode */
+  .pastel-mode .particle-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(210 100% 70% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(240 60% 88% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(330 85% 75% / 0.08) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(1deg); }
+    66% { transform: translateY(-10px) rotate(-1deg); }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  /* Typing animation cursor */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .typing-cursor {
+    animation: blink 1s infinite;
+  }
+}
