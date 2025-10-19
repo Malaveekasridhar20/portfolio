@@ -147,11 +147,11 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
             {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <Card className="glass-card border-primary/20 hover:glow-cyber transition-smooth h-full">
-                <form onSubmit={handleSubmit} className="flex flex-col p-8 h-full">
+            <div className="lg:col-span-2 order-2 lg:order-1">
+              <Card className="glass-card border-primary/20 hover:glow-cyber transition-smooth lg:h-full">
+                <form onSubmit={handleSubmit} className="flex flex-col p-4 sm:p-6 lg:p-8 lg:h-full">
                   <div className="flex-1 space-y-6">
                     <div className="space-y-3">
                       <label htmlFor="name" className="text-lg font-medium dark:text-foreground pastel-mode:text-foreground">
@@ -221,18 +221,18 @@ const Contact = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="lg:col-span-3 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-3 order-1 lg:order-2 flex flex-col justify-between space-y-4 lg:space-y-6">
               {/* Email Box */}
-              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth min-w-0 h-[120px] w-full">
-                <div className="flex items-center gap-6 h-full">
-                  <div className="p-4 rounded-xl bg-primary/10 flex-shrink-0">
-                    <Mail className="h-8 w-8 text-primary" />
+              <Card className="glass-card border-primary/20 p-4 sm:p-6 hover:glow-purple transition-smooth min-w-0 h-auto sm:h-[120px] w-full">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 h-full">
+                  <div className="p-3 sm:p-4 rounded-xl bg-primary/10 flex-shrink-0">
+                    <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-lg text-muted-foreground mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Email</p>
+                    <p className="text-base sm:text-lg text-muted-foreground mb-2 sm:mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Email</p>
                     <a
                       href="mailto:malaveekasridhar20072004@gmail.com"
-                      className="text-base font-bold hover:text-primary transition-smooth whitespace-nowrap overflow-hidden text-ellipsis dark:text-foreground dark:hover:text-primary pastel-mode:text-foreground pastel-mode:hover:text-primary"
+                      className="text-sm sm:text-base font-bold hover:text-primary transition-smooth break-all sm:whitespace-nowrap sm:overflow-hidden sm:text-ellipsis dark:text-foreground dark:hover:text-primary pastel-mode:text-foreground pastel-mode:hover:text-primary"
                       title="malaveekasridhar20072004@gmail.com"
                     >
                       malaveekasridhar20072004@gmail.com
@@ -242,16 +242,16 @@ const Contact = () => {
               </Card>
 
               {/* Phone Box */}
-              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth h-[120px] w-full">
-                <div className="flex items-center gap-6 h-full">
-                  <div className="p-4 rounded-xl bg-primary/10 flex-shrink-0">
-                    <Phone className="h-8 w-8 text-primary" />
+              <Card className="glass-card border-primary/20 p-4 sm:p-6 hover:glow-purple transition-smooth h-auto sm:h-[120px] w-full">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 h-full">
+                  <div className="p-3 sm:p-4 rounded-xl bg-primary/10 flex-shrink-0">
+                    <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-lg text-muted-foreground mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Phone</p>
+                    <p className="text-base sm:text-lg text-muted-foreground mb-2 sm:mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Phone</p>
                     <a
                       href="tel:+919790731131"
-                      className="text-lg font-bold hover:text-primary transition-smooth dark:text-foreground dark:hover:text-primary pastel-mode:text-foreground pastel-mode:hover:text-primary"
+                      className="text-base sm:text-lg font-bold hover:text-primary transition-smooth dark:text-foreground dark:hover:text-primary pastel-mode:text-foreground pastel-mode:hover:text-primary"
                     >
                       +91 9790731131
                     </a>
@@ -260,14 +260,14 @@ const Contact = () => {
               </Card>
 
               {/* Response Time Box */}
-              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth h-[120px] w-full">
-                <div className="flex items-center gap-6 h-full">
-                  <div className="p-4 rounded-xl bg-primary/10 flex-shrink-0">
-                    <Clock className="h-8 w-8 text-primary" />
+              <Card className="glass-card border-primary/20 p-4 sm:p-6 hover:glow-purple transition-smooth h-auto sm:h-[120px] w-full">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 h-full">
+                  <div className="p-3 sm:p-4 rounded-xl bg-primary/10 flex-shrink-0">
+                    <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-lg text-muted-foreground mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Response Time</p>
-                    <p className="text-xl font-extrabold text-primary dark:text-primary pastel-mode:text-primary">
+                    <p className="text-base sm:text-lg text-muted-foreground mb-2 sm:mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Response Time</p>
+                    <p className="text-lg sm:text-xl font-extrabold text-primary dark:text-primary pastel-mode:text-primary">
                       Within 24 hours
                     </p>
                   </div>
@@ -275,15 +275,15 @@ const Contact = () => {
               </Card>
 
               {/* Connect Box */}
-              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth h-[120px] w-full">
-                <div className="flex items-center gap-6 h-full">
-                  <div className="p-4 rounded-xl bg-primary/10 flex-shrink-0">
-                    <div className="h-8 w-8 flex items-center justify-center">
-                      <span className="text-primary font-bold text-xl">🔗</span>
+              <Card className="glass-card border-primary/20 p-4 sm:p-6 hover:glow-purple transition-smooth h-auto sm:h-[120px] w-full">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 h-full">
+                  <div className="p-3 sm:p-4 rounded-xl bg-primary/10 flex-shrink-0">
+                    <div className="h-6 w-6 sm:h-8 sm:w-8 flex items-center justify-center">
+                      <span className="text-primary font-bold text-lg sm:text-xl">🔗</span>
                     </div>
                   </div>
                   <div className="flex-1">
-                    <p className="text-lg text-muted-foreground mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Connect with me</p>
+                    <p className="text-base sm:text-lg text-muted-foreground mb-2 sm:mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Connect with me</p>
                     <div className="flex gap-3">
                       <Button
                         size="sm"
