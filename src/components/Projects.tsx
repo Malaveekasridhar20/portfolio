@@ -29,7 +29,7 @@ const Projects = () => {
       tags: ["Flutter", "SQLite", "Billing"],
       isClient: true,
       image: "/screenshots/rythym-billing.png",
-      demoVideo: "#", // Demo available on request
+      demoVideo: "/videos/rythym-demo-compressed.mp4", // Add compressed video here
     },
     {
       title: "Greedam Ram Finance Chit System",
@@ -37,7 +37,7 @@ const Projects = () => {
       tags: ["React", "Tailwind", "PHP", "MySQL"],
       isClient: true,
       image: "/screenshots/greedam-finance.png",
-      demoVideo: "#", // Demo available on request
+      demoVideo: "/videos/greedam-demo-compressed.mp4", // Add compressed video here
     },
     {
       title: "Photo Studio Billing System (Tri Stone Industries)",
@@ -45,7 +45,7 @@ const Projects = () => {
       tags: ["Flutter", "SQLite", "GST"],
       isClient: true,
       image: "/screenshots/photo-studio-billing.png",
-      demoVideo: "#", // Demo available on request
+      demoVideo: "/videos/photo-studio-demo-compressed.mp4", // Add compressed video here
     },
     {
       title: "Rotary Club of Trichy Diamond City Website",

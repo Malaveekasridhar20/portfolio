@@ -1,0 +1,64 @@
+/* Chatbot Theme Fixes for Pastel Mode */
+
+/* Ensure proper contrast in pastel mode */
+.pastel-mode .glass-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Fix message bubble contrast in pastel mode */
+.pastel-mode [data-chatbot-message="bot"] {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  color: #1f2937 !important;
+}
+
+.pastel-mode [data-chatbot-message="user"] {
+  background-color: rgba(139, 92, 246, 0.8) !important;
+  border: 1px solid rgba(139, 92, 246, 0.6) !important;
+  color: white !important;
+}
+
+/* Improve input field visibility in pastel mode */
+.pastel-mode .chatbot-input {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border: 2px solid rgba(139, 92, 246, 0.4) !important;
+  color: #1f2937 !important;
+}
+
+.pastel-mode .chatbot-input:focus {
+  border-color: rgba(139, 92, 246, 0.7) !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2) !important;
+}
+
+.pastel-mode .chatbot-input::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Ensure proper text contrast */
+.pastel-mode .chatbot-header {
+  color: #1f2937 !important;
+  font-weight: 600;
+}
+
+.pastel-mode .chatbot-description {
+  color: #4b5563 !important;
+}
+
+/* Fix button colors in pastel mode */
+.pastel-mode button[data-chatbot-send] {
+  background-color: rgba(139, 92, 246, 0.9) !important;
+  color: white !important;
+}
+
+.pastel-mode button[data-chatbot-send]:hover {
+  background-color: rgba(139, 92, 246, 1) !important;
+}
+
+/* Chat window background fix */
+.pastel-mode [data-chatbot-window] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid rgba(139, 92, 246, 0.3) !important;
+}
