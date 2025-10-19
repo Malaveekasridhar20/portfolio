@@ -38,35 +38,19 @@ const ContactAnalytics = () => {
     topDomains: [] as { domain: string; count: number }[]
   });
 
-  // Secret key combination to show contact analytics (Ctrl+Shift+C+A)
+  // Secret key combination to show contact analytics (Ctrl+Shift+M)
   useEffect(() => {
-    let keysPressed: Set<string> = new Set();
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      keysPressed.add(e.key.toLowerCase());
-      
-      // Check for Ctrl+Shift+C+A combination
-      if (e.ctrlKey && e.shiftKey && 
-          keysPressed.has('c') && keysPressed.has('a')) {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'M') {
         setIsVisible(!isVisible);
         if (!isVisible) {
           loadContactAnalytics();
         }
-        keysPressed.clear();
       }
     };
 
-    const handleKeyUp = (e: KeyboardEvent) => {
-      keysPressed.delete(e.key.toLowerCase());
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('keyup', handleKeyUp);
-    
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('keyup', handleKeyUp);
-    };
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
   }, [isVisible]);
 
   const loadContactAnalytics = () => {
@@ -314,7 +298,7 @@ const ContactAnalytics = () => {
           </Card>
 
           <div className="mt-4 text-xs text-muted-foreground text-center">
-            Press Ctrl+Shift+C+A to toggle this dashboard • Only shows emails from contact form submissions
+            Press Ctrl+Shift+M to toggle this dashboard • Only shows emails from contact form submissions
           </div>
         </div>
       </div>
