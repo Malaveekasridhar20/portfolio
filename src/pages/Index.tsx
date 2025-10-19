@@ -5,10 +5,18 @@ import Projects from "@/components/Projects";
 import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Chatbot from "@/components/Chatbot";
+import StructuredData from "@/components/StructuredData";
+import HiddenAnalytics from "@/components/HiddenAnalytics";
+import AnalyticsDashboard from "@/components/AnalyticsDashboard";
+import ContactAnalytics from "@/components/ContactAnalytics";
 
 const Index = () => {
   return (
     <main className="relative min-h-screen overflow-hidden">
+      <StructuredData />
+      <HiddenAnalytics />
+      <AnalyticsDashboard />
+      <ContactAnalytics />
       <Chatbot />
       
       <Hero />

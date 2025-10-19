@@ -20,7 +20,7 @@
  */
 
 import { useState } from "react";
-import { Send, Mail, Phone, Github, Linkedin, Instagram } from "lucide-react";
+import { Send, Mail, Phone, Github, Linkedin, Instagram, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -147,87 +147,93 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-5 gap-8">
             {/* Contact Form */}
-            <Card className="glass-card border-primary/20 hover:glow-cyber transition-smooth">
-              <form onSubmit={handleSubmit} className="flex flex-col p-6">
-                <div className="space-y-2 mb-4">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    className="glass-card border-primary/20"
-                  />
-                </div>
+            <div className="lg:col-span-2">
+              <Card className="glass-card border-primary/20 hover:glow-cyber transition-smooth h-full">
+                <form onSubmit={handleSubmit} className="flex flex-col p-8 h-full">
+                  <div className="flex-1 space-y-6">
+                    <div className="space-y-3">
+                      <label htmlFor="name" className="text-lg font-medium dark:text-foreground pastel-mode:text-foreground">
+                        Name
+                      </label>
+                      <Input
+                        id="name"
+                        placeholder="Your name"
+                        value={formData.name}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
+                        className="glass-card border-primary/20 h-12 text-base dark:text-foreground pastel-mode:text-foreground"
+                      />
+                    </div>
 
-                <div className="space-y-2 mb-4">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    className="glass-card border-primary/20"
-                  />
-                </div>
+                    <div className="space-y-3">
+                      <label htmlFor="email" className="text-lg font-medium dark:text-foreground pastel-mode:text-foreground">
+                        Email
+                      </label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="your.email@example.com"
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        className="glass-card border-primary/20 h-12 text-base dark:text-foreground pastel-mode:text-foreground"
+                      />
+                    </div>
 
-                <div className="space-y-2 mb-6">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell me about your project..."
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                    className="glass-card border-primary/20 resize-none"
-                  />
-                </div>
+                    <div className="space-y-3 flex-1">
+                      <label htmlFor="message" className="text-lg font-medium dark:text-foreground pastel-mode:text-foreground">
+                        Message
+                      </label>
+                      <Textarea
+                        id="message"
+                        placeholder="Tell me about your project..."
+                        value={formData.message}
+                        onChange={(e) =>
+                          setFormData({ ...formData, message: e.target.value })
+                        }
+                        className="glass-card border-primary/20 resize-none text-base dark:text-foreground pastel-mode:text-foreground h-32"
+                      />
+                    </div>
+                  </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 glow-cyber transition-smooth mb-4"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="ml-2 h-4 w-4" />
-                    </>
-                  )}
-                </Button>
-              </form>
-            </Card>
+                  <div className="mt-6">
+                    <Button
+                      type="submit"
+                      className="w-full bg-primary hover:bg-primary/90 glow-cyber transition-smooth h-14 text-lg font-semibold"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        "Sending..."
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="ml-3 h-5 w-5" />
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              </Card>
+            </div>
 
             {/* Contact Info */}
-            <div className="space-y-6">
+            <div className="lg:col-span-3 flex flex-col justify-between space-y-6">
               {/* Email Box */}
-              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth min-w-0 h-[100px]">
+              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth min-w-0 h-[120px] w-full">
                 <div className="flex items-center gap-6 h-full">
                   <div className="p-4 rounded-xl bg-primary/10 flex-shrink-0">
-                    <Mail className="h-7 w-7 text-primary" />
+                    <Mail className="h-8 w-8 text-primary" />
                   </div>
-                  <div className="flex-1 min-w-0 overflow-hidden">
-                    <p className="text-base text-muted-foreground mb-2">Email</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-lg text-muted-foreground mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Email</p>
                     <a
                       href="mailto:malaveekasridhar20072004@gmail.com"
-                      className="text-xs font-semibold hover:text-primary transition-smooth block break-all leading-tight"
+                      className="text-base font-bold hover:text-primary transition-smooth whitespace-nowrap overflow-hidden text-ellipsis dark:text-foreground dark:hover:text-primary pastel-mode:text-foreground pastel-mode:hover:text-primary"
+                      title="malaveekasridhar20072004@gmail.com"
                     >
                       malaveekasridhar20072004@gmail.com
                     </a>
@@ -236,16 +242,16 @@ const Contact = () => {
               </Card>
 
               {/* Phone Box */}
-              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth h-[100px]">
+              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth h-[120px] w-full">
                 <div className="flex items-center gap-6 h-full">
                   <div className="p-4 rounded-xl bg-primary/10 flex-shrink-0">
-                    <Phone className="h-7 w-7 text-primary" />
+                    <Phone className="h-8 w-8 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-base text-muted-foreground mb-2">Phone</p>
+                    <p className="text-lg text-muted-foreground mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Phone</p>
                     <a
                       href="tel:+919790731131"
-                      className="text-sm font-semibold hover:text-primary transition-smooth"
+                      className="text-lg font-bold hover:text-primary transition-smooth dark:text-foreground dark:hover:text-primary pastel-mode:text-foreground pastel-mode:hover:text-primary"
                     >
                       +91 9790731131
                     </a>
@@ -253,21 +259,36 @@ const Contact = () => {
                 </div>
               </Card>
 
-              {/* Connect Box */}
-              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth h-[100px]">
+              {/* Response Time Box */}
+              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth h-[120px] w-full">
                 <div className="flex items-center gap-6 h-full">
                   <div className="p-4 rounded-xl bg-primary/10 flex-shrink-0">
-                    <div className="h-7 w-7 flex items-center justify-center">
-                      <span className="text-primary font-bold text-lg">🔗</span>
+                    <Clock className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-lg text-muted-foreground mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Response Time</p>
+                    <p className="text-xl font-extrabold text-primary dark:text-primary pastel-mode:text-primary">
+                      Within 24 hours
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Connect Box */}
+              <Card className="glass-card border-primary/20 p-6 hover:glow-purple transition-smooth h-[120px] w-full">
+                <div className="flex items-center gap-6 h-full">
+                  <div className="p-4 rounded-xl bg-primary/10 flex-shrink-0">
+                    <div className="h-8 w-8 flex items-center justify-center">
+                      <span className="text-primary font-bold text-xl">🔗</span>
                     </div>
                   </div>
                   <div className="flex-1">
-                    <p className="text-base text-muted-foreground mb-2">Connect with me</p>
-                    <div className="flex gap-2">
+                    <p className="text-lg text-muted-foreground mb-3 dark:text-muted-foreground pastel-mode:text-muted-foreground">Connect with me</p>
+                    <div className="flex gap-3">
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="h-8 w-8 p-0 hover:glow-cyber transition-smooth"
+                        className="h-10 w-10 p-0 hover:glow-cyber transition-smooth"
                         asChild
                       >
                         <a
@@ -275,13 +296,13 @@ const Contact = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Github className="h-4 w-4" />
+                          <Github className="h-5 w-5" />
                         </a>
                       </Button>
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="h-8 w-8 p-0 hover:glow-cyber transition-smooth"
+                        className="h-10 w-10 p-0 hover:glow-cyber transition-smooth"
                         asChild
                       >
                         <a
@@ -289,13 +310,13 @@ const Contact = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Linkedin className="h-4 w-4" />
+                          <Linkedin className="h-5 w-5" />
                         </a>
                       </Button>
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="h-8 w-8 p-0 hover:glow-cyber transition-smooth"
+                        className="h-10 w-10 p-0 hover:glow-cyber transition-smooth"
                         asChild
                       >
                         <a
@@ -303,7 +324,7 @@ const Contact = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Instagram className="h-4 w-4" />
+                          <Instagram className="h-5 w-5" />
                         </a>
                       </Button>
                     </div>

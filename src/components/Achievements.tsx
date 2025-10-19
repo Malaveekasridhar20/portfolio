@@ -1,6 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Trophy, Award, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ExternalLink, Trophy, Award, Star, Image, X } from "lucide-react";
+import { useState } from "react";
 
 interface Achievement {
   id: number;
@@ -84,7 +87,7 @@ const achievements: Achievement[] = [
   {
     id: 7,
     title: "Winner - Code Machine",
-    event: "ANALYTICA",
+    event: "ANALYTIKHA",
     year: "2024",
     prize: "Coding Excellence + Cash reward",
     category: "Competition",
@@ -138,6 +141,19 @@ const getCategoryColor = (category: string) => {
 };
 
 const Achievements = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedTitle, setSelectedTitle] = useState<string>("");
+
+  const openImageModal = (imageSrc: string, title: string) => {
+    setSelectedImage(imageSrc);
+    setSelectedTitle(title);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+    setSelectedTitle("");
+  };
+
   return (
     <section id="achievements" className="py-20 relative">
       <div className="container mx-auto px-4">
@@ -181,7 +197,10 @@ const Achievements = () => {
                   {/* Achievement Image Display */}
                   {achievement.image && achievement.image !== "#" && (
                     <div className="my-3">
-                      <div className="relative overflow-hidden rounded-lg border-2 border-primary/30 bg-white shadow-lg">
+                      <div
+                        className="relative overflow-hidden rounded-lg border-2 border-primary/30 bg-white shadow-lg cursor-pointer group"
+                        onClick={() => openImageModal(achievement.image!, `${achievement.event} - ${achievement.title}`)}
+                      >
                         <img
                           src={achievement.image}
                           alt={`${achievement.event} - ${achievement.title}`}
@@ -191,6 +210,12 @@ const Achievements = () => {
                             e.currentTarget.style.display = 'none';
                           }}
                         />
+                        {/* Zoom overlay indicator */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 rounded-full p-2">
+                            <Image className="h-6 w-6 text-primary" />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -223,6 +248,32 @@ const Achievements = () => {
             Each achievement represents a milestone in my journey of continuous learning and innovation.
           </p>
         </div>
+
+        {/* Image Zoom Modal */}
+        <Dialog open={!!selectedImage} onOpenChange={closeImageModal}>
+          <DialogContent className="max-w-4xl max-h-[90vh] p-0 bg-transparent border-0">
+            <DialogHeader className="sr-only">
+              <DialogTitle>{selectedTitle} - Achievement Image</DialogTitle>
+            </DialogHeader>
+            <div className="relative">
+              <Button
+                onClick={closeImageModal}
+                variant="ghost"
+                size="icon"
+                className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+              {selectedImage && (
+                <img
+                  src={selectedImage}
+                  alt={selectedTitle}
+                  className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+                />
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

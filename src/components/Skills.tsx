@@ -15,7 +15,7 @@ const Skills = () => {
     },
     {
       title: "Web Development",
-      skills: ["React", "Tailwind CSS", "Django", "PostgreSQL", "SQL", "MongoDB"],
+      skills: ["React", "Tailwind CSS", "Django", "PostgreSQL", "SQL", "MongoDB", "HTML", "CSS", "JS"],
       color: "text-blue-400 dark:text-blue-300"
     },
     {

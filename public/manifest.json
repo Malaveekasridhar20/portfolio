@@ -1,0 +1,27 @@
+{
+  "name": "Malaveeka Sridhar - AI Engineer & Software Developer",
+  "short_name": "Malaveeka Portfolio",
+  "description": "Freelance AI Engineer, Software Developer & Website Developer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f23",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "developer"],
+  "lang": "en",
+  "dir": "ltr"
+}

@@ -40,8 +40,8 @@ const Projects = () => {
       demoVideo: "/videos/greedam-demo-compressed.mp4", // Add compressed video here
     },
     {
-      title: "Photo Studio Billing System (Tri Stone Industries)",
-      description: "Flutter + SQLite app with GST-enabled billing and invoice reporting. Real-time client project.",
+      title: "Photo Studio Billing System",
+      description: "Flutter + SQLite Software with GST-enabled billing and invoice reporting. Real-time client project.",
       tags: ["Flutter", "SQLite", "GST"],
       isClient: true,
       image: "/screenshots/photo-studio-billing.png",
@@ -197,12 +197,10 @@ const Projects = () => {
                         <Button
                           size="sm"
                           className="bg-accent hover:bg-accent/90 text-accent-foreground"
-                          asChild
+                          onClick={() => window.open('mailto:malaveekasridhar20072004@gmail.com?subject=Demo Video Request for ' + project.title + '&body=Hi Malaveeka,%0D%0A%0D%0AI would like to request the demo video for ' + project.title + '. Please send it to me personally.%0D%0A%0D%0AThank you!', '_blank')}
                         >
-                          <a href={project.demoVideo} target="_blank" rel="noopener noreferrer">
-                            <Play className="h-4 w-4 mr-2" />
-                            Demo Video
-                          </a>
+                          <Play className="h-4 w-4 mr-2" />
+                          Request Demo Video
                         </Button>
                       )}
                       {(!project.demoVideo || project.demoVideo === "#") && !project.isWebsite && (
