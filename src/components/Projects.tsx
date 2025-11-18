@@ -57,6 +57,16 @@ const Projects = () => {
       demoVideo: "#", // No demo video for website
       isWebsite: true, // Special flag for website projects
     },
+    {
+      title: "Liver Cure Clinic Website",
+      description: "Professional healthcare website for liver treatment clinic. Real-time client project.",
+      tags: ["Web Development", "Healthcare", "Responsive Design"],
+      link: "https://livercureclinic.com/",
+      isClient: true,
+      image: "/screenshots/liver-cure-clinic.png",
+      demoVideo: "#", // No demo video for website
+      isWebsite: true, // Special flag for website projects
+    },
   ];
 
   const technicalProjects = [
